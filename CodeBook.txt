@@ -1,0 +1,20 @@
+The script run_analysis.R performs the steps described in the readme file.
+
+    1. the raw data is assigned a name and read into the R script.  
+    2. the data is combined by variable
+    3. the desired data (mean/std) are extracted
+    4. columns are named/labeled according to their value, ie. subject, activity, ID
+    5. all the data is combined into one data frame
+    6. data abbreviations are expanded to enhance readability and understanding
+    7. the averages (means) of the data columns are taken and a new tidy data table is created, "averages_data.txt".
+
+
+
+Variables
+
+subject_train/test, y_train/test, x_train/test contain the data from the downloaded files.
+subject, activitydata, featuresdata combine the previous datasets to further analysis.
+features contains the correct names for the featuresdata dataset, which are applied to the column names stored in getmeanstd, a numeric vector used to extract the desired data.
+A similar approach is taken with activity names through the activitity labels variable.
+totaldata combines the previous datasets into one dataset.
+Finally, averages_data contains the relevant averages which will be later stored in a .txt file. ddply() from the plyr package is used to apply colMeans() and ease the development.
